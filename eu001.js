@@ -3,17 +3,17 @@ var i;
 var j;
 
 for (i = 3; i < 1000; i += 3) {
-    arr.push(i);
+  arr.push(i);
 }
 
 for (j = 5; j < 1000; j += 5) {
-    if ((j % 15) !== 0) {
-        arr.push(j);
-    }
+  if ((j % 15) !== 0) {
+    arr.push(j);
+  }
 }
 
 var sum = arr.reduce(function (a, b) {
-    return a + b;
+  return a + b;
 });
 
 console.log(sum);
