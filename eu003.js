@@ -1,9 +1,16 @@
-var primesArray = [2];
+var primesArray = [2, 3];
 var i;
 var x = 600851475143;
 
 Array.prototype.last = function() {
   return this[this.length - 1];
+};
+
+Array.prototype.appendNextPrime = function() {
+  var lastPrime = this.last();
+  var i;
+  for (i = lastPrime; !isPrime(i); i += 2);
+  this.push(i);
 };
 
 function isPrime(n) {
@@ -15,13 +22,6 @@ function isPrime(n) {
   }
   return true;
 }
-
-primesArray.appendNextPrime = function() {
-  var lastPrime = this.last();
-  var i;
-  for (i = lastPrime; !isPrime(i); i++);
-  this.push(i);
-};
 
 while (x !== 1) {
   if (x % primesArray.last() === 0) {
