@@ -12,8 +12,8 @@ for (j = 5; j < 1000; j += 5) {
   }
 }
 
-var sum = arr.reduce(function (a, b) {
-  return a + b;
+var sum = arr.reduce(function(previousValue, currentValue) {
+  return previousValue + currentValue;
 });
 
 console.log(sum);
